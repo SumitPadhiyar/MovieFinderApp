@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
     tools:context=".presentation.MainActivity">
 
     <Spinner
@@ -27,8 +28,10 @@
             android:id="@+id/mcv__act_main__movies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/sp__act_main_item__type"
             android:layout_centerInParent="true"
             android:focusableInTouchMode="true"
+            android:nextFocusDown="@+id/btn__act_main__search"
             android:hint="@string/hint_textview_movie"
             android:imeOptions="actionDone"
             android:inputType="text|textNoSuggestions|textMultiLine"
@@ -39,13 +42,14 @@
 
 
     <Button
-        android:id="@+id/btn__act_main__search"
+        android:id="@id/btn__act_main__search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/til__act_main__movies"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/margin_base"
         android:layout_marginTop="@dimen/margin_base"
+        android:enabled="false"
         android:onClick="onClick"
         android:text="Search" />
 

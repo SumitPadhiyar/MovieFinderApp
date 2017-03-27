@@ -3,4 +3,7 @@
 
     <string name="hint_textview_movie">Search movies,serials,episodes...</string>
 
+    <string name="msg__err__no_network">No network found!</string>
+    <string name="msg__err__something_wrong">Oops... Something went wrong</string>
+
 </resources>
