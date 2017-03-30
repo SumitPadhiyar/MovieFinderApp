@@ -13,11 +13,13 @@ import java.lang.reflect.Type;
  */
 public class MovieListingResponse implements JsonDeserializer<MovieListingResponse>{
 
+    private static final String TAG_LOG = MovieListingResponse.class.getSimpleName();
+
     private boolean response;
     private String error;
     private Movie movie;
 
-    private static final String JKEY_RESPONSE = "response";
+    private static final String JKEY_RESPONSE = "Response";
     private static final String JKEY_ERROR = "Error";
 
     @Override
@@ -29,7 +31,7 @@ public class MovieListingResponse implements JsonDeserializer<MovieListingRespon
 
         JsonObject jsonObject = json.getAsJsonObject();
         MovieListingResponse movieListingResponse = new MovieListingResponse();
-        movieListingResponse.response = jsonObject.getAsJsonPrimitive(JKEY_RESPONSE).getAsBoolean();
+        movieListingResponse.response = jsonObject.get(JKEY_RESPONSE).getAsBoolean();
         if(jsonObject.has(JKEY_ERROR)){
             movieListingResponse.error = jsonObject.get(JKEY_ERROR).getAsString();
         }else{

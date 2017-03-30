@@ -4,7 +4,7 @@ import com.demoapps.moviefinderapp.model.MovieListingResponse;
 
 import java.util.Map;
 
-import retrofit2.Call;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.QueryMap;
 
@@ -13,6 +13,6 @@ import retrofit2.http.QueryMap;
  */
 public interface MovieListingService {
 
-    @GET
-    public Call<MovieListingResponse> getMovieListingResponse(@QueryMap(encoded=true) Map<String,String> filters);
+    @GET(".")
+    Observable<MovieListingResponse> getMovieListingResponse(@QueryMap(encoded=true) Map<String,String> filters);
 }

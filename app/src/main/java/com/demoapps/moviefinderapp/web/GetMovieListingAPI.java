@@ -66,7 +66,7 @@ public class GetMovieListingApi {
         queryMap.put("t",title);
         queryMap.put("type",type);
 
-        Call<MovieListingResponse> call = service.getMovieListingResponse(queryMap);
+        Call<MovieListingResponse> call = (Call<MovieListingResponse>) service.getMovieListingResponse(queryMap);
         call.enqueue(new Callback<MovieListingResponse>() {
             @Override
             public void onResponse(Call<MovieListingResponse> call, Response<MovieListingResponse> response) {
