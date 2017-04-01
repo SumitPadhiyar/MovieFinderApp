@@ -32,10 +32,10 @@ public class MovieListingResponse implements JsonDeserializer<MovieListingRespon
         JsonObject jsonObject = json.getAsJsonObject();
         MovieListingResponse movieListingResponse = new MovieListingResponse();
         movieListingResponse.response = jsonObject.get(JKEY_RESPONSE).getAsBoolean();
-        if(jsonObject.has(JKEY_ERROR)){
-            movieListingResponse.error = jsonObject.get(JKEY_ERROR).getAsString();
+        if(movieListingResponse.isResponse()){
+            movieListingResponse.movie = context.deserialize(json,Movie.class);
         }else{
-            movie = context.deserialize(json,Movie.class);
+            movieListingResponse.error = jsonObject.get(JKEY_ERROR).getAsString();
         }
 
         return movieListingResponse;
