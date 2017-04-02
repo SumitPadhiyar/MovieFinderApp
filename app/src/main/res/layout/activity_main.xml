@@ -40,7 +40,6 @@
 
     </android.support.design.widget.TextInputLayout>
 
-
     <Button
         android:id="@id/btn__act_main__search"
         android:layout_width="wrap_content"

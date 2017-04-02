@@ -38,13 +38,9 @@ public class MovieDetailsActivity extends AppBaseActivity {
     //region Overridden Methods
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
         Log.v(TAG_LOG, "onCreate:  IN");
-
         super.onCreate(savedInstanceState);
-
         Log.v(TAG_LOG, "onCreate:  OUT");
-
     }
 
     @Override

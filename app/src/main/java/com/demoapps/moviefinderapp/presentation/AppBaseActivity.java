@@ -18,6 +18,7 @@ public abstract class AppBaseActivity extends AppCompatActivity {
         onParseArgs();
         onSetupUI(savedInstanceState);
     }
+
     protected void onParseArgs() {
     }
 

@@ -11,6 +11,10 @@ import retrofit2.http.QueryMap;
 /**
  * Created by Skip on 27-03-2017.
  */
+
+/*
+* RESTful service to fetch list of movies.
+* */
 public interface MovieListingService {
 
     @GET(".")

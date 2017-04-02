@@ -137,6 +137,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             query.add(service.getMovieListingResponse(prepareMovieSearchParams(movie,searchType)));
         }
 
+        /*
+        * Observes all queries & wait for its completion to proceed further.
+        * */
         Observable.fromIterable(query)
                 .flatMap(new Function<Observable<MovieListingResponse>, ObservableSource<MovieListingResponse>>() {
                     @Override
@@ -180,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (progressBar.isShowing()) {
             progressBar.dismiss();
         }
-        progressBar.setCanceledOnTouchOutside(false);
+        progressBar.setCancelable(false);
         progressBar.setMessage(msg);
         progressBar.setIndeterminate(true);
         progressBar.show();

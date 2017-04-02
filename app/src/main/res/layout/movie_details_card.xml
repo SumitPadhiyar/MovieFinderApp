@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/margin_base"
     android:elevation="3dp"
     card_view:cardCornerRadius="2dp"
     tools:targetApi="lollipop">
@@ -14,23 +13,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_margin="@dimen/margin_base">
 
         <TextView
             android:id="@+id/tv__movie_details_cardview__title_placeholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:text="Title:"/>
+            style="@style/PlaceholderStyle"
+            android:text="Title :" />
 
         <TextView
             android:id="@+id/tv__movie_details_cardview__title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv__movie_details_cardview__title_placeholder"
             android:layout_alignBaseline="@id/tv__movie_details_cardview__title_placeholder"
             android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/tv__movie_details_cardview__title_placeholder"
             android:textColor="@android:color/black"
             tools:text="Breaking Bad" />
 
@@ -40,17 +38,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv__movie_details_cardview__title"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:text="Genre:"/>
+            android:text="Genre :"
+            style="@style/PlaceholderStyle" />
 
         <TextView
             android:id="@+id/tv__movie_details_cardview__genre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv__movie_details_cardview__genre_placeholder"
             android:layout_alignBaseline="@id/tv__movie_details_cardview__genre_placeholder"
             android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/tv__movie_details_cardview__genre_placeholder"
             android:textColor="@android:color/black"
             tools:text="American drama" />
 
@@ -60,19 +57,18 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv__movie_details_cardview__genre"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:text="Plot:"/>
+            android:text="Plot :"
+            style="@style/PlaceholderStyle"/>
 
         <TextView
             android:id="@+id/tv__movie_details_cardview__plot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv__movie_details_cardview__plot_placeholder"
             android:layout_alignBaseline="@id/tv__movie_details_cardview__plot_placeholder"
             android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/tv__movie_details_cardview__plot_placeholder"
             android:textColor="@android:color/black"
-            tools:text="American drama series" />
+            tools:text="Breaking Bad is an American crime drama television series created and produced by Vince Gilligan." />
 
         <TextView
             android:id="@+id/tv__movie_details_cardview__release_date_placeholder"
@@ -80,17 +76,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv__movie_details_cardview__plot"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:text="Release Date:"/>
+            android:text="Release Date :"
+            style="@style/PlaceholderStyle" />
 
         <TextView
             android:id="@+id/tv__movie_details_cardview__release_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv__movie_details_cardview__release_date_placeholder"
             android:layout_alignBaseline="@id/tv__movie_details_cardview__release_date_placeholder"
             android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/tv__movie_details_cardview__release_date_placeholder"
             android:textColor="@android:color/black"
             tools:text="20 July 2009" />
 
@@ -100,25 +95,24 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv__movie_details_cardview__release_date"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:text="Rating:"/>
+            android:text="Rating :"
+            style="@style/PlaceholderStyle" />
 
         <RelativeLayout
             android:id="@+id/rl__movie_details_cardview__progressbar_container"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_toRightOf="@id/tv__movie_details_cardview__rating_placeholder"
             android:layout_alignTop="@id/tv__movie_details_cardview__rating_placeholder"
-            android:layout_marginLeft="4dp">
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/tv__movie_details_cardview__rating_placeholder">
 
             <ProgressBar
                 android:id="@+id/pb__movie_details_cardview__progress_bar_rating"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:indeterminate="false"
                 android:layout_centerInParent="true"
-                style="?android:attr/progressBarStyleHorizontal"
+                android:indeterminate="false"
                 android:max="10"
                 android:progress="0"
                 android:progressDrawable="@drawable/circular_progress_bar" />
@@ -127,10 +121,10 @@
                 android:id="@+id/tv__movie_details_cardview__progress_rating"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="0.0"
+                android:layout_centerInParent="true"
                 android:gravity="center"
-                android:textColor="#b0f89a"
-                android:layout_centerInParent="true"/>
+                android:text="0.0"
+                android:textColor="#b0f89a" />
 
         </RelativeLayout>
 

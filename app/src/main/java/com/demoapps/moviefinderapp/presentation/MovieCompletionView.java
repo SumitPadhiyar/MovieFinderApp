@@ -14,6 +14,10 @@ import com.tokenautocomplete.TokenCompleteTextView;
 /**
  * Created by Skip on 26-03-2017.
  */
+
+/*
+* Token class that wraps movie names into token like in gmail app.
+* */
 public class MovieCompletionView extends TokenCompleteTextView<String> {
 
     public MovieCompletionView(Context context) {
@@ -30,8 +34,8 @@ public class MovieCompletionView extends TokenCompleteTextView<String> {
 
     @Override
     protected View getViewForObject(String object) {
-        LayoutInflater l = (LayoutInflater)getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        TextView token = (TextView) l.inflate(R.layout.movie_token, (ViewGroup) getParent(), false);
+        LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        TextView token = (TextView) inflater.inflate(R.layout.movie_token, (ViewGroup) getParent(), false);
         token.setText(object);
         return token;
     }
